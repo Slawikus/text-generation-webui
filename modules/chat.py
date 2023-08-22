@@ -205,7 +205,7 @@ def chatbot_wrapper(text, state, regenerate=False, _continue=False, loading_mess
     prompt = apply_extensions('custom_generate_chat_prompt', text, state, **kwargs)
     if prompt is None:
         prompt = generate_chat_prompt(text, state, **kwargs)
-
+    print(f'The final prompt is: \n {prompt}')
     # Generate
     cumulative_reply = ''
     for i in range(state['chat_generation_attempts']):
